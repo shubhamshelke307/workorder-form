@@ -4,13 +4,14 @@ import { StyleSheet, Text, View } from 'react-native';
 import Workorder from './CreateWorkorder/Workorder';
 import Vendor from './CreateVendor/Vendor'
 import document from './CreateWorkorder/documentPicker'
+import DeliveryChallan from './CreateDeliverChallan/CreateDeliveryChallan'
 export default function App() {
   
   return (
     <View style={styles.container}>
-     <Workorder/>
+     {/* <Workorder/> */}
      <Vendor/>
-     
+     {/* <DeliveryChallan/> */}
     </View>
   );
 }

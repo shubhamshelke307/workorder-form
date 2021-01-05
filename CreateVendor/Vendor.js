@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text,TextInput,StyleSheet,TouchableOpacity,Picker,Button } from 'react-native';
+import { View, Text,TextInput,StyleSheet,TouchableOpacity,Picker,Button,SafeAreaView,ScrollView } from 'react-native';
 
 class Vendor extends Component {
   constructor(props) {
@@ -10,8 +10,9 @@ class Vendor extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-          
+      <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollView}>
+          <View style={styles.middle}>
          
       <Picker style={styles.dropdownpicker}
            selectedValue={this.state.company}
@@ -41,8 +42,10 @@ class Vendor extends Component {
       
      />
    </View>
+   </View>
  </View>
-      </View>
+      </ScrollView>
+      </SafeAreaView>
     );
   }
 }
@@ -55,22 +58,34 @@ const styles = StyleSheet.create({
         alignItems:'center',
         position:"relative"
      },
+     scrollView: {
+      backgroundColor: '#ffffff',
+      marginHorizontal: 20,
+    },
+      middle:{
+      position:'relative',
+      width:'100%',
+      paddingVertical:'50%',
+      top:'5%',
+      alignSelf:"center",
+    },
      TextInput:{
-        width:261,
-        height:36,
-        backgroundColor:'#fffff',
-        borderRadius:25,
-        marginVertical:10,
-        paddingVertical:16,
-        paddingHorizontal:16
-       
+      margin: 5,
+      paddingLeft:5,
+      height: 50,
+      borderColor: 'black',
+      borderWidth: 1,
+      borderRadius:10,
 
      },
      dropdownpicker:{
      
-        height: 36,
-        width: 261,
-        marginBottom:20
+        height: 56,
+        width: 300,
+        margin:5,
+        borderRadius:10,
+        borderColor: 'black',
+        borderWidth: 1,
       },
       buttonText1:{
         textAlign:"center",

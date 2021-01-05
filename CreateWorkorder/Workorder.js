@@ -1,8 +1,5 @@
 import React,{ useState,Component } from 'react';
-import { View, Text,TextInput,StyleSheet,TouchableOpacity,Picker,Button,SafeAreaView} from 'react-native';
-// import DropDownPicker from 'react-native-dropdown-picker';
-//import CalendarPicker from 'react-native-calendar-picker';
-// import DatePicker from 'react-datepicker';
+import { View, Text,TextInput,StyleSheet,TouchableOpacity,Picker,Button,SafeAreaView,ScrollView} from 'react-native';
 
 
 class Workorder extends Component {
@@ -12,29 +9,18 @@ class Workorder extends Component {
     this.state = {
       selectedValue:'',
       onValueChange:'',
-      
-      
+       
       }
-      
-    
-
-    // click=()=>{
-    //   this.setState({
-    //     date:'2016-05-15'
-    //   })
-    // }
     
   }
 
   render() {
     
-   
-
-
     return (
         
-      <View style={styles.container}>
-          
+      <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollView}>
+          <View style={styles.middle}>
          
           <Picker style={styles.dropdownpicker}
                selectedValue={this.state.company}
@@ -101,6 +87,8 @@ class Workorder extends Component {
    </View>
  </View>
       </View>
+      </ScrollView>
+      </SafeAreaView>
     );
   }
 }
@@ -112,18 +100,27 @@ const styles = StyleSheet.create({
         alignItems:'center',
         position:"relative"
      },
-     inputBox:{
-        width:261,
-        height:36,
-        backgroundColor:'#ffffff',
-        borderRadius:25,
-        marginVertical:10,
-        paddingVertical:16,
-        paddingHorizontal:16,
-        borderColor:'black',
-        //  underlineColorAndroid:'rgba(0,0,0,0)'
-
+     middle:{
+       position:'relative',
+       width:'100%',
+       height:'100%',
+       top:'5%',
+       paddingVertical:'50%',
+       alignSelf:"center",
      },
+     inputBox:{
+      margin: 5,
+      paddingLeft:5,
+      height: 50,
+      borderColor: 'black',
+      borderWidth: 1,
+      borderRadius:10,
+      
+     },
+     scrollView: {
+      backgroundColor: '#ffffff',
+      marginHorizontal: 20,
+    },
      button:{
         width:150,
         height:50,
@@ -147,15 +144,14 @@ const styles = StyleSheet.create({
        height:50,
        borderRadius:25,
     },
-    datePickerStyle: {
-      width: 200,
-      marginTop: 20,
-    },
+    
     dropdownpicker:{
-     
-      height: 36,
-      width: 261,
-      marginBottom:20
+      height: 56,
+      width: 300,
+      margin:5,
+      borderRadius:10,
+      borderColor: 'black',
+      borderWidth: 1,
     }
     });
 export default Workorder;
